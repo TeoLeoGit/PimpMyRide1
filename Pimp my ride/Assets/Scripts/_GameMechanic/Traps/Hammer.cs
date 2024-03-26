@@ -61,10 +61,8 @@ public class Hammer : Trap
     private void OnCollisionEnter(Collision collision)
     {
         var layer = collision.collider.gameObject.layer;
-        print($"Check {collision.collider.gameObject.layer}");
         if (_enableDamage && (layer == 9 || layer == 10))
         {
-            print("hitted!");
             _gameController.HandleHealthUpdate(-baseDamage, collision.gameObject.GetInstanceID());
         }
     }
