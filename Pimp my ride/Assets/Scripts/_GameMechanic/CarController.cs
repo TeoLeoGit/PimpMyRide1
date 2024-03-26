@@ -40,6 +40,7 @@ public class CarController : MonoBehaviour
 
     private float _moveInput;
     private float _steerInput;
+    private bool _isStucked;
 
     private Rigidbody _carRb;
 
@@ -107,11 +108,25 @@ public class CarController : MonoBehaviour
     {
         Vector3 relativeVector = transform.InverseTransformPoint(target);
         float newSteer = (relativeVector.x / relativeVector.magnitude) * _maxAcceleration;
+
         foreach (var wheel in wheels)
         {
             if (wheel.axel == Axel.Front)
                 wheel.wheelCollider.steerAngle = newSteer;
-            wheel.wheelCollider.motorTorque = 10 * 600 * _maxAcceleration * Time.fixedDeltaTime;
+
+            wheel.wheelCollider.motorTorque = 600 * _maxAcceleration * Time.fixedDeltaTime;
         }
     }
+
+    public void MoveBack(float steerAngle)
+    {
+        foreach (var wheel in wheels)
+        {
+            if (wheel.axel == Axel.Front)
+                wheel.wheelCollider.steerAngle = steerAngle;
+
+            wheel.wheelCollider.motorTorque = -3000 * _maxAcceleration * Time.fixedDeltaTime;
+        }
+    }
+
 }

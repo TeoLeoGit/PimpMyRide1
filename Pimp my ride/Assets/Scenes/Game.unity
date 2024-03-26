@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 100692233}
   - component: {fileID: 100692232}
   - component: {fileID: 100692231}
-  m_Layer: 0
-  m_Name: Cube (2)
+  m_Layer: 7
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,6 +228,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100692229}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &115347007 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6268903913191545613, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
+  m_PrefabInstance: {fileID: 831979360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &273987685
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,10 +420,9 @@ Transform:
   m_GameObject: {fileID: 542463377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 0.1, z: 10}
+  m_LocalScale: {x: 30, y: 0.1, z: 30}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1586844643}
+  m_Children: []
   m_Father: {fileID: 894551674}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -627,6 +631,14 @@ PrefabInstance:
       propertyPath: maxSteerAngle
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 976469442766263070, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
+      propertyPath: _maxSteerAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 976469442766263070, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
+      propertyPath: _turnSensitivity
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2029044787501984734, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
       propertyPath: m_Name
       value: EnemyCar
@@ -637,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078219875330492906, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 2078219875330492906, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
       propertyPath: m_LocalPosition.y
@@ -645,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078219875330492906, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 2078219875330492906, guid: 77f63585c0c4b8442994b4330fa9d0db, type: 3}
       propertyPath: m_LocalRotation.w
@@ -709,6 +721,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f108eef89852a24d9a18e09208064c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 583669641}
+  _collider: {fileID: 115347007}
+  _maxDistance: 2.36
+  _rayBoxSize: {x: 0.6, y: 0.44, z: 2.67}
+  steerAngle: 0
 --- !u!1 &894551673
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +754,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1586844643}
   - {fileID: 542463378}
   - {fileID: 273987686}
   - {fileID: 495508613}
@@ -755,8 +773,8 @@ GameObject:
   - component: {fileID: 900900674}
   - component: {fileID: 900900673}
   - component: {fileID: 900900672}
-  m_Layer: 0
-  m_Name: Cube (3)
+  m_Layer: 7
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,16 +981,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586844642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 30, y: 0.1, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2118025293}
   - {fileID: 2029345951}
   - {fileID: 100692230}
   - {fileID: 900900671}
-  m_Father: {fileID: 542463378}
+  m_Father: {fileID: 894551674}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2029345950
@@ -987,8 +1005,8 @@ GameObject:
   - component: {fileID: 2029345954}
   - component: {fileID: 2029345953}
   - component: {fileID: 2029345952}
-  m_Layer: 0
-  m_Name: Cube (1)
+  m_Layer: 7
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1092,8 +1110,8 @@ GameObject:
   - component: {fileID: 2118025296}
   - component: {fileID: 2118025295}
   - component: {fileID: 2118025294}
-  m_Layer: 0
-  m_Name: Cube
+  m_Layer: 7
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
