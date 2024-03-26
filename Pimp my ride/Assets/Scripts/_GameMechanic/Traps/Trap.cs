@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField] float _baseDamage;
+    [SerializeField] protected float baseDamage;
 
     public virtual void Attack() { }
     public virtual void Stop() { }

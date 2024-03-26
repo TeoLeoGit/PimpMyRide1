@@ -5,6 +5,10 @@ using DG.Tweening;
 
 public class Hammer : Trap
 {
+    [Header("MVC_Controller")]
+    [SerializeField] GameplayController _gameController;
+
+    [Space(10)]
     [SerializeField] float _rotateValue;
     [SerializeField] float _rotateDuration;
     [SerializeField] float _delayTime;
@@ -52,5 +56,16 @@ public class Hammer : Trap
     public override void Stop()
     {
         StopAllCoroutines();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        var layer = collision.collider.gameObject.layer;
+        print($"Check {collision.collider.gameObject.layer}");
+        if (_enableDamage && (layer == 9 || layer == 10))
+        {
+            print("hitted!");
+            _gameController.HandleHealthUpdate(-baseDamage, collision.gameObject.GetInstanceID());
+        }
     }
 }

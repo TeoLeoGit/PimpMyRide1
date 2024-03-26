@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2551316949404023676}
   - component: {fileID: 2313230522257286677}
+  - component: {fileID: 6081923279056254894}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -46,10 +47,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbf810fcd2e68948972540c3d040e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseDamage: 15
+  baseDamage: 15
+  _gameController: {fileID: 11400000, guid: f5e18ed5548688646811e71e0fac34c9, type: 2}
   _rotateValue: 90
   _rotateDuration: 0.2
   _delayTime: 1.5
+--- !u!54 &6081923279056254894
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541298262391467192}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6851594585926929729
 GameObject:
   m_ObjectHideFlags: 0
