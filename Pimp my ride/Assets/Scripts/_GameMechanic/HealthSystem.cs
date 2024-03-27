@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class HealthSystem : MonoBehaviour
 
     [SerializeField] private int _healthId;
     private float _currentHealth;
+
+    public event Action<float, float> OnHealthChange;
 
     void Start()
     {
@@ -29,7 +32,7 @@ public class HealthSystem : MonoBehaviour
         if (healthId == _healthId) 
         {
             _currentHealth = Mathf.Clamp(_currentHealth + amount, 0, _maxHealth);
-            print($"New health {_currentHealth}");
+            OnHealthChange?.Invoke(_currentHealth, _maxHealth);
             if (_currentHealth == 0f)
             {
                 //Die event.
