@@ -8,7 +8,6 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform _target;
     [SerializeField] Collider _collider;
     [SerializeField] float _maxDistance;
-    [SerializeField] Vector3 _rayBoxSize;
     bool _hitDetect;
     RaycastHit _hit;
     CarController _carController;
@@ -42,6 +41,7 @@ public class EnemyAI : MonoBehaviour
             _carController.SteeringToTarget(_target.position);
         }
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

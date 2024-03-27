@@ -1373,7 +1373,6 @@ MonoBehaviour:
   _target: {fileID: 583669641}
   _collider: {fileID: 749828799}
   _maxDistance: 2.36
-  _rayBoxSize: {x: 0.6, y: 0.44, z: 2.67}
   steerAngle: 0
 --- !u!1 &1714040001 stripped
 GameObject:
@@ -1400,7 +1399,6 @@ MonoBehaviour:
   _target: {fileID: 583669641}
   _collider: {fileID: 1561648219}
   _maxDistance: 2.36
-  _rayBoxSize: {x: 0.6, y: 0.44, z: 2.67}
   steerAngle: 0
 --- !u!1001 &1796171738
 PrefabInstance:
@@ -2048,6 +2046,10 @@ PrefabInstance:
     - target: {fileID: 3322891226424766283, guid: 30550e8af831f864bb8631b3aa8f5190, type: 3}
       propertyPath: m_Name
       value: FlameThrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894200471154960817, guid: 30550e8af831f864bb8631b3aa8f5190, type: 3}
+      propertyPath: _damageRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

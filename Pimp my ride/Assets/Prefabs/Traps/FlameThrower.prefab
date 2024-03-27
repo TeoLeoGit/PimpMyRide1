@@ -47,9 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 15
   _gameController: {fileID: 11400000, guid: f5e18ed5548688646811e71e0fac34c9, type: 2}
-  _damageRange: 0
-  _attackRate: 0
-  _cooldownEachAttack: 0
+  _gunCollider: {fileID: 3579357961137587807}
+  _damageRange: 5
+  _attackRate: 0.15
+  _cooldownEachAttack: 3
+  _damageableLayer:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!1 &6177923618625554997
 GameObject:
   m_ObjectHideFlags: 0
