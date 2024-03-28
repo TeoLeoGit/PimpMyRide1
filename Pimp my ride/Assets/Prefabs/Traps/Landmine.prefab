@@ -392,6 +392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDamage: 15
+  _damageableLayer:
+    serializedVersion: 2
+    m_Bits: 1536
   _gameController: {fileID: 11400000, guid: f5e18ed5548688646811e71e0fac34c9, type: 2}
   _explosionParticle: {fileID: 8150493376417475844}
 --- !u!1001 &4421311908803122262

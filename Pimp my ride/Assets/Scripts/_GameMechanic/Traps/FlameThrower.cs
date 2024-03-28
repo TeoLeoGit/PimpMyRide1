@@ -13,7 +13,6 @@ public class FlameThrower : Trap
     [SerializeField] float _damageRange;
     [SerializeField] float _attackRate;
     [SerializeField] float _cooldownEachAttack;
-    [SerializeField] LayerMask _damageableLayer;
 
     RaycastHit[] _hitInfos = { };
 

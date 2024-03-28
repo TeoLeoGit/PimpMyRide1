@@ -24,8 +24,7 @@ public class Saw : Trap
 
     private void OnCollisionEnter(Collision collision)
     {
-        var layer = collision.collider.gameObject.layer;
-        if (layer == 9 || layer == 10)
+        if (((1 << collision.gameObject.layer) & _damageableLayer) != 0)
         {
             _gameController.HandleHealthUpdate(-baseDamage, collision.gameObject.GetInstanceID());
         }

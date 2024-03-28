@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4278854504815288536}
   - component: {fileID: 6510418424794477005}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorWall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

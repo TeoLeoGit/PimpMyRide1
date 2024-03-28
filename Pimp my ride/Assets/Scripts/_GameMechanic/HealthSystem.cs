@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour
         _gameController.OnHealthUpdate += OnHealthUpdate;
 
         _currentHealth = _maxHealth;
-        _healthId = gameObject.GetInstanceID();
+        _healthId = GetComponent<Rigidbody>().gameObject.GetInstanceID();
     }
 
     private void OnDestroy()

@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform _target;
     [SerializeField] Collider _collider;
     [SerializeField] float _maxDistance;
+    [SerializeField] LayerMask _obstacleLayer;
     bool _hitDetect;
     RaycastHit _hit;
     CarController _carController;
@@ -26,8 +27,8 @@ public class EnemyAI : MonoBehaviour
     private void CheckWalls()
     {
         RaycastHit hitInfo;
-        _hitDetect = Physics.Raycast(_collider.bounds.center, transform.forward, out hitInfo, _maxDistance);
-        if (_hitDetect && hitInfo.collider.name == "Wall")
+        _hitDetect = Physics.Raycast(_collider.bounds.center, transform.forward, out hitInfo, _maxDistance, _obstacleLayer);
+        if (_hitDetect)
         {
             //Output the name of the Collider your Box hit
             _carController.MoveBack(steerAngle);

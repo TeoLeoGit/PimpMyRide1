@@ -357,7 +357,9 @@ MonoBehaviour:
   _target: {fileID: 0}
   _collider: {fileID: 6639909519010976774}
   _maxDistance: 2.36
-  _rayBoxSize: {x: 0.6, y: 0.44, z: 2.67}
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 128
   steerAngle: 0
 --- !u!1 &4153881200379115134
 GameObject:

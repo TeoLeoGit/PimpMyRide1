@@ -15,7 +15,7 @@ public class Landmine : Trap
     private void OnCollisionEnter(Collision collision)
     {
         var layer = collision.collider.gameObject.layer;
-        if (!_activated && (layer == 9 || layer == 10))
+        if (((1 << collision.gameObject.layer) & _damageableLayer) != 0)
         {
             _activated = true;
             _gameController.HandleHealthUpdate(-baseDamage, collision.gameObject.GetInstanceID());
