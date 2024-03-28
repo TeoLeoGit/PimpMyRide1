@@ -13,6 +13,8 @@ public class DoorToNextArea : MonoBehaviour
     private void Start()
     {
         _gameController.OnNextAreaSelectZoneEnter += OnPlayerSelectDoor;
+
+        gameObject.SetActive(false);
     }
 
     private void OnDestroy()
@@ -26,11 +28,13 @@ public class DoorToNextArea : MonoBehaviour
         {
             _doors[doorIndex].gameObject.SetActive(false);
             _selectZones[doorIndex].gameObject.SetActive(false);
+            _gameController.HandleOpenNextArea(transform.localRotation.eulerAngles);
         }
     }
 
     public void SetupDoors()
     {
+        gameObject.SetActive(true);
         foreach (var door in _doors)
             door.SetActive(true);
 

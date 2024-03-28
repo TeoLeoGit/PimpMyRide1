@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class WallManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] _verticalWalls;
-    [SerializeField] GameObject[] _horizontalWalls;
+    [SerializeField] GameObject[] _verticalWalls; //0 = right, 1 = left.
+    [SerializeField] GameObject[] _horizontalWalls; //0 = top, 1 = bot.
     [SerializeField] DoorToNextArea[] _nextAreaDoors;
 
-    private void Start()
+    public void ShowZonesTriggerNextArea()
     {
-        StartCoroutine(Test());
-    }
-
-    private void ShowWallsToNextArea()
-    {
-        var random = Random.Range(0, 2);
+        //var random = Random.Range(0, 2);
+        var random = 0;
 
         if (random == 0)
         {
@@ -42,8 +38,6 @@ public class WallManager : MonoBehaviour
             _horizontalWalls[1].gameObject.SetActive(false);
             _nextAreaDoors[1].SetupDoors();
         }
-
-
     }
 
     private void SetupWalls()
@@ -54,14 +48,23 @@ public class WallManager : MonoBehaviour
             wall.SetActive(true);
     }
 
-    IEnumerator Test()
+    public void DeactiveWall(Vector3 areaOffset)
     {
-        while (true)
+        if (areaOffset.z == 30f) //Place area on top --> deactive bot wall
         {
-            yield return new WaitForSeconds(2f);
-            SetupWalls();
-            ShowWallsToNextArea();
-            break;
+            _horizontalWalls[1].SetActive(false);
+            return;
         }
+        if (areaOffset.z == -30f) 
+        {
+            _horizontalWalls[0].SetActive(false);
+            return;
+        }
+        if (areaOffset.x == 30f) 
+        {
+            _verticalWalls[1].SetActive(false);
+            return;
+        }
+        _verticalWalls[0].SetActive(false);
     }
 }
