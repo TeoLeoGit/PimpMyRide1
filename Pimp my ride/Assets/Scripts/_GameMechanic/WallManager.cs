@@ -40,12 +40,14 @@ public class WallManager : MonoBehaviour
         }
     }
 
-    private void SetupWalls()
+    public void SetupWalls()
     {
         foreach(var wall in _horizontalWalls) 
             wall.SetActive(true);
         foreach (var wall in _verticalWalls)
             wall.SetActive(true);
+        foreach (var door in _nextAreaDoors)
+            door.DeactiveDoor();
     }
 
     public void DeactiveWall(Vector3 areaOffset)

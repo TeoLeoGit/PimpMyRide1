@@ -27,7 +27,7 @@ public class DoorToNextArea : MonoBehaviour
         if (_selectZones.Contains(sender))
         {
             _doors[doorIndex].gameObject.SetActive(false);
-            _selectZones[doorIndex].gameObject.SetActive(false);
+            //_selectZones[doorIndex].gameObject.SetActive(false);
             _gameController.HandleOpenNextArea(transform.localRotation.eulerAngles);
         }
     }
@@ -42,5 +42,13 @@ public class DoorToNextArea : MonoBehaviour
         foreach (var selectZone in _selectZones)
             selectZone.gameObject.SetActive(false);
         _selectZones[randomZone].gameObject.SetActive(true);
+    }
+
+    public void DeactiveDoor()
+    {
+        foreach (var door in _doors)
+            door.SetActive(false);
+        foreach (var selectZone in _selectZones)
+            selectZone.gameObject.SetActive(false);
     }
 }

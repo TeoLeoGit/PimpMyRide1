@@ -16,7 +16,16 @@ public class NextAreaSelectZone : MonoBehaviour
         if (((1 << other.gameObject.layer) & _playerLayer) != 0)
         {
             _gameController.HandlePlayerEnterSelectZone(_index, this);
+            GetComponent<Collider>().enabled = false;
+            StartCoroutine(ICloseOldArea());
         }
     }
 
+    private IEnumerator ICloseOldArea()
+    {
+        yield return new WaitForSeconds(4f);
+        gameObject.SetActive(false);
+        GetComponent<Collider>().enabled = true;
+        _gameController.HandlePlayerEnterNewArea();
+    }
 }
