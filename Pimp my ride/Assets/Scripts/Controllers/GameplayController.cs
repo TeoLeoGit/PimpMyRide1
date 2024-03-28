@@ -7,18 +7,18 @@ using UnityEngine;
 public class GameplayController : ScriptableObject
 {
     public event Action<float, int> OnHealthUpdate;
-    private void Awake()
-    {
-        
-    }
-
-    private void OnDestroy()
-    {
-        
-    }
+    public event Action<int, NextAreaSelectZone> OnNextAreaSelectZoneEnter;
+   
 
     public void HandleHealthUpdate(float amount, int healthId)
     {
         OnHealthUpdate?.Invoke(amount, healthId);
     }
+
+    public void HandlePlayerEnterSelectZone(int index, NextAreaSelectZone sender)
+    {
+        OnNextAreaSelectZoneEnter?.Invoke(index, sender);
+    }
+
+
 }

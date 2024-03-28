@@ -23,10 +23,6 @@ public class EnemyAI : MonoBehaviour
         CheckWalls();
     }
 
-    private void FixedUpdate()
-    {
-    }
-
     private void CheckWalls()
     {
         RaycastHit hitInfo;
